@@ -5,14 +5,12 @@
 ## Content
 1. [Before start](#before-start)
 2. [Tech Stack](#tech-stack)
-3. [Dev environment](#dev-environment)
-4. [Architecture](#architecture)
-5. [Folder structure](#folder-structure-example)
-6. [Run the app](#run-the-app)
-7. [Build the app](#build-the-app)
-8. [Check linter rules](#check-linter-rules)
-9. [Check style linter rules](#check-style-linter-rules)
-9. [Run unit tests](#run-unit-tests)
+3. [Architecture](#architecture)
+4. [Folder structure](#folder-structure-example)
+5. [Run the app](#run-the-app)
+6. [Build the app](#build-the-app)
+7. [Check linter rules](#check-linter-rules)
+8. [Run unit tests](#run-unit-tests)
 
 ### Before start
 
