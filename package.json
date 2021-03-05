@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -o --prod=false --sourceMap=true --ssl=true",
+    "start": "ng serve -o --prod=false --ssl=true",
     "build": "ng build --build-optimizer --output-hashing none",
     "build:prod": "ng build --prod --build-optimizer --output-hashing none",
     "test": "ng test",
-    "test:ci": "ng test --sourceMap=false --browsers=ChromeHeadless --watch=false",
+    "test:ci": "ng test --browsers=ChromeHeadless --watch=false",
     "lint": "ng lint"
   },
   "private": true,
