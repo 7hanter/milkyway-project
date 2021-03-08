@@ -8,6 +8,7 @@
       "@components/*": ["components/*"],
       "@core/*": ["core/*"],
       "@modules/*": ["modules/*"],
+      "@services/*": ["services/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

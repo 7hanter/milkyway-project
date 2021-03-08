@@ -41,6 +41,7 @@ The project keep and follow the most used patterns within Angular projects, howe
 ┣ 📂config
 ┣ 📂core
 ┣ 📂modules
+┣ 📂services
 ┗ 📂unit-tests
 📜.editorconfig
 📜.gitignore
@@ -56,6 +57,7 @@ The project keep and follow the most used patterns within Angular projects, howe
 | src/config  	| Services routes, application internal routes, environments config, unit test config, lang resources, etc.   	|
 | src/core  	| Main startup of the application, compatibility, mock services config, routes and url mapping.  	|
 | src/modules  	| Redux props and data flow injectors.  	|
+| src/services  	| Angular services.  	|
 | src/components  	| Main components of the application 	|
 | src/assets  	| Main styles, css files, custom theme, color palette, etc.  	|
 | src/unit-tests  	| Unit test coverage of the components, redux, etc.  	|
