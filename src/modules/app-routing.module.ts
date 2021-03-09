@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MapComponent } from '@components/map/map.component';
+import { TripsPageComponent } from '@components/pages/trips-page/trips-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'map',
+    redirectTo: 'trips',
     pathMatch: 'full'
   },
-  { path: 'map', component: MapComponent }
+  { path: 'trips', component: TripsPageComponent }
 ];
 
 @NgModule({
