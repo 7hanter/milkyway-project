@@ -20,21 +20,23 @@ export class ListComponent implements OnInit {
   public filterInfo: FilterInfo;
   public ascendentOrder: boolean;
   public orderFilter: OrderByInfo;
+  public itemSelected: number;
 
   constructor(private dataService: DataService) {
     const defaultDropdown = {
       title: 'filter',
       options: [],
     };
+    this.itemSelected = 0;
     this.filterInfo = {
       tag: '',
-      option: ''
+      option: '',
     };
     this.ascendentOrder = true;
     this.orderFilter = {
       asc: this.ascendentOrder,
-      option: ''
-    }
+      option: '',
+    };
     this.tripList = [];
     this.orderByDropdown = ORDER_BY;
     this.countryDropdown = defaultDropdown;
@@ -61,8 +63,19 @@ export class ListComponent implements OnInit {
     };
   }
 
-  public onTripClick(location: TripLocation): void {
+  public onTripClick(location: TripLocation, index: number): void {
+    this.itemSelected = index;
     this.tripClickEvent.emit(location);
+  }
+
+  public navClick(direction: number): void {
+    if (
+      (this.itemSelected === 0 && direction === -1) ||
+      (this.itemSelected === this.tripList.length - 1 && direction === 1)
+    ) {
+      return;
+    }
+    document.getElementById((this.itemSelected + direction).toString())?.click();
   }
 
   public getFlag(countryId: string): string {
@@ -74,16 +87,18 @@ export class ListComponent implements OnInit {
   }
 
   public setFilterTag(option: string, tag: string): void {
+    this.itemSelected = 0;
     this.filterInfo = {
       tag: tag,
-      option: option
-    }
+      option: option,
+    };
   }
 
   public setOrderBy(option: string, asc: boolean): void {
+    this.itemSelected = 0;
     this.orderFilter = {
       option: option,
       asc: asc,
-    }
+    };
   }
 }

@@ -1,13 +1,16 @@
 <section class="milkyway-list-section">
   <div class="milkyway-list__upper-bar">
-    <milkyway-dropdown [dropdownConfig]=countryDropdown (selection)="setFilterTag($event, 'country')"></milkyway-dropdown>
+    <milkyway-dropdown [dropdownConfig]=countryDropdown (selection)="setFilterTag($event, 'country')">
+    </milkyway-dropdown>
     <milkyway-dropdown [dropdownConfig]=cityDropdown (selection)="setFilterTag($event, 'city')"></milkyway-dropdown>
     <milkyway-dropdown [dropdownConfig]=typeDropdown (selection)="setFilterTag($event, 'type')"></milkyway-dropdown>
-    <milkyway-dropdown [dropdownConfig]=orderByDropdown (selection)="setOrderBy($event, ascendentOrder)"></milkyway-dropdown>
+    <milkyway-dropdown [dropdownConfig]=orderByDropdown (selection)="setOrderBy($event, ascendentOrder)">
+    </milkyway-dropdown>
   </div>
   <div class="milkyway-list-container">
     <ul class="milkyway-list">
-      <li *ngFor="let trip of (tripList | filterBy: filterInfo | orderBy: orderFilter); index as i" class="milkyway-list__item" (click)="onTripClick(trip.location)">
+      <li id="{{i}}" *ngFor="let trip of (tripList | filterBy: filterInfo | orderBy: orderFilter); index as i"
+        class="milkyway-list__item" (click)="onTripClick(trip.location, i)" [ngClass]="{'active': i === itemSelected}">
         <div class="milkyway-list__item_number">
           <span>{{i + 1}}</span>
         </div>
@@ -27,8 +30,8 @@
   </div>
   <div class="milkyway-list__bottom-bar">
     <div class="milkyway-list__nav">
-      <div class="milkyway-list__nav_back"></div>
-      <div class="milkyway-list__nav_forward"></div>
+      <div class="milkyway-list__nav_prev" (click)="navClick(-1)"> < </div>
+      <div class="milkyway-list__nav_next" (click)="navClick(1)"> > </div>
     </div>
   </div>
 </section>

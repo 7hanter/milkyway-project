@@ -5,6 +5,10 @@
   height: 100vh;
 }
 
+.active {
+  background-color: $milkyway-container-fade;
+}
+
 .milkyway-list {
   padding: 0 0 6rem;
   margin: 0;
@@ -27,7 +31,7 @@
     background-color: $milkyway-container;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-top: 1px solid $milkyway-container-darker;
     position: absolute;
@@ -47,7 +51,7 @@
     transition: all 0.1s;
 
     &:hover {
-      background-color: $milkyway-container-darker;
+      @extend .active;
     }
 
     &-city {
@@ -94,6 +98,38 @@
         width: 40px;
         border-radius: 50%;
         border: 2px solid $milkyway-flag-stroke;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+
+    &_prev {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      color: white;
+      background-color: $milkyway-primary;
+            
+      &:hover {
+        background-color: $milkyway-secondary;
+      }
+    }
+
+    &_next {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      color: white;
+      background-color: $milkyway-primary;
+      
+      &:hover {
+        background-color: $milkyway-secondary;
       }
     }
   }
