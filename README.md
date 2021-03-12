@@ -9,8 +9,6 @@
 4. [Folder structure](#folder-structure-example)
 5. [Run the app](#run-the-app)
 6. [Build the app](#build-the-app)
-7. [Check linter rules](#check-linter-rules)
-8. [Run unit tests](#run-unit-tests)
 
 ### Before start
 
@@ -23,7 +21,6 @@ We recommend use [Visual Studio Code](https://code.visualstudio.com/) to work in
 ## Tech Stack
 
 - Core: [Angular](https://angular.io/)
-- Unit Test: [Karma](https://karma-runner.github.io/latest/index.html) & [Jasmine](https://jasmine.github.io/index.html)
 
 ## Architecture
 
@@ -64,7 +61,6 @@ The project keep and follow the most used patterns within Angular projects, howe
 | src/modules  	| Angular modules.  	|
 | src/services  	| Pipes, filters and order by.  	|
 | src/services  	| Angular services.  	|
-| src/unit-tests  	| Unit test coverage of the components, redux, etc.  	|
 
 ## Run the app
 > Keep in mind the current env file to guarantee the expected behavior of the following commands
@@ -77,18 +73,4 @@ ng serve -o # or using the angular-cli
 ```bash
 npm run build # to run the app with the built in script
 ng build # or using the angular-cli
-```
-
-## Check linter rules
-> To preserve a clean, fancy and with the best practices code always remember to check your linter rules
-```bash
-npm run lint # to run the app with the built in script
-ng lint # or using the angular-cli
-```
-
-## Run unit tests
-> You could use the [Angular/Karma Test Explorer](https://marketplace.visualstudio.com/items?itemName=raagh.angular-karma-test-explorer) already mentioned or you also can explore the tests following:
-```bash
-npm run test # to run the app with the built in script
-ng test # or using the angular-cli
 ```
