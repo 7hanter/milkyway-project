@@ -21,12 +21,20 @@ export class MapService {
   public setMarker(
     lng: number,
     lat: number,
+    popup?: mapboxgl.Popup,
     options?: mapboxgl.MarkerOptions
   ): void {
-    new mapboxgl.Marker(options || {}).setLngLat([lng, lat]).addTo(this.map);
+    new mapboxgl.Marker(options || {})
+        .setLngLat([lng, lat])
+        .setPopup(popup)
+        .addTo(this.map);
   }
 
-  public setStyle(layer: string): void{
+  public setStyle(layer: string): void {
     this.map.setStyle('mapbox://styles/mapbox/' + layer);
+  }
+
+  public flyTo(options: mapboxgl.FlyToOptions): void {
+    this.map.flyTo(options);
   }
 }

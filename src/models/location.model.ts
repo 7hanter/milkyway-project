@@ -18,15 +18,15 @@ export const MOCK_COUNTRIES: Array<Country> = [
         name: 'Colombia',
         flag: 'assets/img/flags/colombia.svg',
         cities: [
-            'Bogotá',
-            'Medellín',
+            'Bogota',
+            'Medellin',
             'Cartagena'
         ]
     },
     {
-        id: 'CO',
+        id: 'CL',
         name: 'Chile',
-        flag: '',
+        flag: 'assets/img/flags/chile.svg',
         cities: [
             'Santiago',
             'Pucon',
@@ -35,35 +35,35 @@ export const MOCK_COUNTRIES: Array<Country> = [
         ]
     },
     {
-        id: 'CO',
+        id: 'MX',
         name: 'Mexico',
-        flag: '',
+        flag: 'assets/img/flags/mexico.svg',
         cities: [
             'Cancun',
             'Playa del Carmen'
         ]
     },
     {
-        id: 'CO',
+        id: 'BO',
         name: 'Bolivia',
-        flag: '',
+        flag: 'assets/img/flags/bolivia.svg',
         cities: [
             'La Paz',
             'Santa Cruz'
         ]
     },
     {
-        id: 'CO',
+        id: 'ES',
         name: 'Spain',
-        flag: '',
+        flag: 'assets/img/flags/spain.svg',
         cities: [
             'Madrid'
         ]
     },
     {
-        id: 'CO',
+        id: 'DE',
         name: 'Germany',
-        flag: '',
+        flag: 'assets/img/flags/germany.svg',
         cities: [
             'Frankfurt',
             'Berlin',
@@ -71,36 +71,36 @@ export const MOCK_COUNTRIES: Array<Country> = [
         ]
     },
     {
-        id: 'CO',
+        id: 'US',
         name: 'USA',
-        flag: '',
+        flag: 'assets/img/flags/usa.svg',
         cities: [
             'Boston',
-            'New Hamsphire',
+            'New Hampshire',
             'San Francisco',
             'New York'
         ]
     },
     {
-        id: 'CO',
+        id: 'JP',
         name: 'Japan',
-        flag: '',
+        flag: 'assets/img/flags/japan.svg',
         cities: [
             'Tokyo'
         ]
     },
     {
-        id: 'CO',
+        id: 'IT',
         name: 'Italy',
-        flag: '',
+        flag: 'assets/img/flags/italy.svg',
         cities: [
             'Rome'
         ]
     },
     {
-        id: 'CO',
+        id: 'FR',
         name: 'France',
-        flag: '',
+        flag: 'assets/img/flags/france.svg',
         cities: [
             'Lourdes'
         ]

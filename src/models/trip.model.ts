@@ -6,10 +6,19 @@ export interface Trip {
     startDate: Date;
     endDate?: Date;
 }
+export interface FilterInfo {
+    tag: string;
+    option: string;
+}
+
+export interface OrderByInfo {
+    asc: boolean;
+    option: string;
+}
 
 export const TRIP_TYPE = {
     holiday: 'HOLIDAY',
-    wish: 'WISH',
+    dream: 'DREAM',
     living: 'LIVING',
     work: 'WORK',
     business: 'BUSINESS',
@@ -64,7 +73,7 @@ export const MOCK_TRIPS: Array<Trip> = [
     {
         location: {
             countryId: 'CL',
-            city: 'Villarica',
+            city: 'Villarrica',
             lat: -39.2800,
             lng: -72.2300
         },
@@ -94,4 +103,195 @@ export const MOCK_TRIPS: Array<Trip> = [
         startDate: new Date('2020-01-09'),
         endDate: new Date('2020-01-15')
     },
+    {
+        location: {
+            countryId: 'BO',
+            city: 'Santa Cruz',
+            lat: -16.4942,
+            lng: -68.1475
+        },
+        type: TRIP_TYPE.family,
+        startDate: new Date('2020-01-15'),
+        endDate: new Date('2020-01-22')
+    },
+    {
+        location: {
+            countryId: 'CO',
+            city: 'Medellin',
+            lat: 6.2447,
+            lng: -75.5748
+        },
+        type: TRIP_TYPE.living,
+        startDate: new Date('1995-03-17'),
+        endDate: new Date('2006-12-06')
+    },
+    {
+        location: {
+            countryId: 'CL',
+            city: 'Pucon',
+            lat: -39.28223,
+            lng: -71.95427
+        },
+        type: TRIP_TYPE.holiday,
+        startDate: new Date('2020-12-24'),
+        endDate: new Date('2020-12-31')
+    },
+    {
+        location: {
+            countryId: 'CO',
+            city: 'Bogota',
+            lat: 4.6126,
+            lng: -74.0705
+        },
+        type: TRIP_TYPE.family,
+        startDate: new Date('2013-04-05'),
+    },
+    {
+        location: {
+            countryId: 'CL',
+            city: 'Pucon',
+            lat: -39.28223,
+            lng: -71.95427
+        },
+        type: TRIP_TYPE.dream,
+        startDate: new Date('2022-01-01'),
+    },
+    {
+        location: {
+            countryId: 'MX',
+            city: 'Cancun',
+            lat: 21.17429,
+            lng: -86.84656
+        },
+        type: TRIP_TYPE.family,
+        startDate: new Date('2020-10-01'),
+        endDate: new Date('2020-10-15')
+    },
+    {
+        location: {
+            countryId: 'MX',
+            city: 'Playa del Carmen',
+            lat: 20.6274,
+            lng: -87.07987
+        },
+        type: TRIP_TYPE.holiday,
+        startDate: new Date('2020-10-15'),
+        endDate: new Date('2020-10-17')
+    },
+    {
+        location: {
+            countryId: 'ES',
+            city: 'Madrid',
+            lat: 40.416775,
+            lng: -3.703790
+        },
+        type: TRIP_TYPE.business,
+        startDate: new Date('2014-10-15'),
+        endDate: new Date('2014-10-20')
+    },
+    {
+        location: {
+            countryId: 'DE',
+            city: 'Frankfurt',
+            lat: 50.110924,
+            lng: 8.682127
+        },
+        type: TRIP_TYPE.business,
+        startDate: new Date('2014-10-09')
+    },
+    {
+        location: {
+            countryId: 'DE',
+            city: 'Berlin',
+            lat: 52.520008,
+            lng: 13.404954
+        },
+        type: TRIP_TYPE.dream,
+        startDate: new Date('2021-07-09'),
+    },
+    {
+        location: {
+            countryId: 'DE',
+            city: 'Hamburg',
+            lat: 53.551086,
+            lng: 9.993682
+        },
+        type: TRIP_TYPE.dream,
+        startDate: new Date('2021-07-20'),
+    },
+    {
+        location: {
+            countryId: 'US',
+            city: 'Boston',
+            lat: 42.361145,
+            lng: -71.057083
+        },
+        type: TRIP_TYPE.family,
+        startDate: new Date('2019-06-06'),
+        endDate: new Date('2019-06-20')
+    },
+    {
+        location: {
+            countryId: 'US',
+            city: 'New Hampshire',
+            lat: 44.000000,
+            lng: -71.500000
+        },
+        type: TRIP_TYPE.family,
+        startDate: new Date('2019-05-30'),
+        endDate: new Date('2019-06-06')
+    },
+    {
+        location: {
+            countryId: 'US',
+            city: 'New York',
+            lat: 40.730610,
+            lng: -73.935242
+        },
+        type: TRIP_TYPE.business,
+        startDate: new Date('2008-03-17'),
+        endDate: new Date('2008-04-02')
+    },
+    {
+        location: {
+            countryId: 'US',
+            city: 'San Francisco',
+            lat: 37.773972,
+            lng: -122.431297
+        },
+        type: TRIP_TYPE.holiday,
+        startDate: new Date('2018-12-10'),
+        endDate: new Date('2019-01-05')
+    },
+    {
+        location: {
+            countryId: 'JP',
+            city: 'Tokyo',
+            lat: 35.652832,
+            lng: 139.839478
+        },
+        type: TRIP_TYPE.dream,
+        startDate: new Date('2021-03-17'),
+    },
+    {
+        location: {
+            countryId: 'IT',
+            city: 'Rome',
+            lat: 41.902782,
+            lng: 12.496366
+        },
+        type: TRIP_TYPE.holiday,
+        startDate: new Date('2014-10-15'),
+        endDate: new Date('2014-10-19')
+    },
+    {
+        location: {
+            countryId: 'FR',
+            city: 'Lourdes',
+            lat: 43.1,
+            lng: -0.05
+        },
+        type: TRIP_TYPE.holiday,
+        startDate: new Date('2014-10-14'),
+    }
 ];

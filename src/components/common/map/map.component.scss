@@ -1,9 +1,10 @@
-@import "src/assets/colors";
+@import 'src/assets/colors';
+@import 'src/assets/fonts';
 
 .milkyway-map {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
   
   &__menu {
     position: absolute;
@@ -16,5 +17,24 @@
       display: flex;
       align-items: center;
     }
+  }
+}
+
+::ng-deep .milkyway-popup {
+  background-color: $milkyway-container;
+  font-family: $milkyway-font;
+  width: 400px;
+  
+  &__title {
+    font-size: 1.2rem;
+    color: $milkyway-primary;
+  }
+
+  &__subtitle {
+    color: $milkyway-secondary;
+  }
+
+  &__position {
+    font-size: 0.7rem;
   }
 }
