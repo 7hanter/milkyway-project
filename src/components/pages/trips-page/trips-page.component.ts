@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TripLocation } from '@models/location.model';
 import { MOCK_TRIPS, Trip } from '@models/trip.model';
+import { MapService } from '@services/map.service';
 
 @Component({
   selector: 'milkyway-trips-page',
@@ -9,12 +10,16 @@ import { MOCK_TRIPS, Trip } from '@models/trip.model';
 })
 export class TripsPageComponent implements OnInit {
   public tripList: Array<Trip> = MOCK_TRIPS;
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
   ngOnInit(): void {
   }
 
-  public setClickedTrip(trip: TripLocation): void {
-    console.log(trip);
+  public flyToLocation(location: TripLocation): void {
+    const flyOptions: mapboxgl.FlyToOptions = {
+      center: [location.lng, location.lat],
+      essential: true
+    };
+    this.mapService.flyTo(flyOptions);
   }
 }

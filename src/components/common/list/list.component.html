@@ -1,23 +1,37 @@
-<div class="milkyway-list-container">
+<section class="milkyway-list-section">
   <div class="milkyway-list__upper-bar">
-    <milkyway-dropdown [dropdownConfig]=filterByDropdown></milkyway-dropdown>
-    <milkyway-search-bar></milkyway-search-bar>
+    <milkyway-dropdown [dropdownConfig]=countryDropdown (selection)="setFilterTag($event, 'country')">
+    </milkyway-dropdown>
+    <milkyway-dropdown [dropdownConfig]=cityDropdown (selection)="setFilterTag($event, 'city')"></milkyway-dropdown>
+    <milkyway-dropdown [dropdownConfig]=typeDropdown (selection)="setFilterTag($event, 'type')"></milkyway-dropdown>
+    <milkyway-dropdown [dropdownConfig]=orderByDropdown (selection)="setOrderBy($event, ascendentOrder)">
+    </milkyway-dropdown>
   </div>
-  <ul class="milkyway-list">
-    <li *ngFor="let trip of tripList; let i = index" class="milkyway-list__item" (click)="onTripClick(trip.location)">
-      <div class="milkyway-list__item_number">{{i + 1}}</div>
-      <div class="milkyway-list__item_description">
-        <span class="milkyway-list__item-city">{{trip.location.city}}</span>
-        <span class="milkyway-list__item-country">{{trip.location.countryId}}</span>
-        <span class="milkyway-list__item-title">{{trip.startDate | date}} - {{trip.endDate | date}}</span>
-      </div>
-      <div class="milkyway-list__item_type">{{trip.type}}</div>
-      <div class="milkyway-list__item_img">
-        <img src="assets/img/flags/colombia.svg" alt="{{trip.location.countryId}} flag">
-      </div>
-    </li>
-  </ul>
+  <div class="milkyway-list-container">
+    <ul class="milkyway-list">
+      <li id="{{i}}" *ngFor="let trip of (tripList | filterBy: filterInfo | orderBy: orderFilter); index as i"
+        class="milkyway-list__item" (click)="onTripClick(trip.location, i)" [ngClass]="{'active': i === itemSelected}">
+        <div class="milkyway-list__item_number">
+          <span>{{i + 1}}</span>
+        </div>
+        <div class="milkyway-list__item_description">
+          <span class="milkyway-list__item-city">{{trip.location.city}}</span>
+          <span class="milkyway-list__item-country">{{getCountryName(trip.location.countryId)}}</span>
+          <span class="milkyway-list__item-date">{{trip.startDate | date}} - {{trip.endDate | date}}</span>
+        </div>
+        <div class="milkyway-list__item_type">
+          <span>{{trip.type}}</span>
+        </div>
+        <div class="milkyway-list__item_img">
+          <img [src]="getFlag(trip.location.countryId)" alt="{{trip.location.countryId}} flag">
+        </div>
+      </li>
+    </ul>
+  </div>
   <div class="milkyway-list__bottom-bar">
-    <milkyway-dropdown [dropdownConfig]=orderByDropdown></milkyway-dropdown>
+    <div class="milkyway-list__nav">
+      <div class="milkyway-list__nav_prev" (click)="navClick(-1)"> < </div>
+      <div class="milkyway-list__nav_next" (click)="navClick(1)"> > </div>
+    </div>
   </div>
-</div>
+</section>

@@ -1,18 +1,136 @@
+@import "src/assets/colors";
+
+.milkyway-list-section {
+  background-color: $milkyway-container;
+  height: 100vh;
+}
+
+.active {
+  background-color: $milkyway-container-fade;
+}
+
 .milkyway-list {
-    &__item {
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+  padding: 0 0 6rem;
+  margin: 0;
 
-        &_description {
-            display: flex;
-            flex-direction: column;
-        }
+  &-container {
+    overflow-y: auto;
+    height: 100%;
+  }
 
-        &_img > img {
-            min-width: 40px;
-        }
+  &__upper-bar {
+    background-color: $milkyway-primary;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom: 1px solid $milkyway-container-darker;
+  }
+
+  &__bottom-bar {
+    background-color: $milkyway-container;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $milkyway-container-darker;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    box-sizing: border-box;
+  }
+
+  &__item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $milkyway-container-darker;
+    transition: all 0.1s;
+
+    &:hover {
+      @extend .active;
     }
+
+    &-city {
+      color: $milkyway-dark;
+      font-weight: bold;
+    }
+
+    &-country {
+      color: $milkyway-secondary;
+    }
+
+    &-date {
+      font-size: 0.9rem;
+    }
+
+    &_description {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      width: 50%;
+    }
+
+    &_number {
+      padding: 1rem;
+      font-weight: bold;
+      width: 10%;
+      text-align: center;
+    }
+
+    &_type {
+      padding: 1rem;
+      width: 20%;
+      font-weight: bold;
+      color: $milkyway-primary;
+      text-align: center;
+    }
+
+    &_img {
+      width: 20%;
+      text-align: center;
+      padding: 1rem;
+
+      img {
+        width: 40px;
+        border-radius: 50%;
+        border: 2px solid $milkyway-flag-stroke;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+
+    &_prev {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      color: white;
+      background-color: $milkyway-primary;
+            
+      &:hover {
+        background-color: $milkyway-secondary;
+      }
+    }
+
+    &_next {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      color: white;
+      background-color: $milkyway-primary;
+      
+      &:hover {
+        background-color: $milkyway-secondary;
+      }
+    }
+  }
 }

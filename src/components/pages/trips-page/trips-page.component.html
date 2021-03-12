@@ -1,4 +1,8 @@
 <section class="milkyway-trips">
-  <milkyway-list [tripList]=tripList (tripClickEvent)="setClickedTrip($event)"></milkyway-list>
-  <milkyway-map></milkyway-map>
+  <div class="milkyway-trips__list-container">
+    <milkyway-list [tripList]="tripList" (tripClickEvent)="flyToLocation($event)"></milkyway-list>
+  </div>
+  <div class="milkyway-trips__map-container">
+    <milkyway-map [tripList]=tripList></milkyway-map>
+  </div>
 </section>

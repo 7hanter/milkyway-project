@@ -3,8 +3,7 @@
     {{ dropdownConfig?.title || 'title' }}
   </button>
   <div class="milkyway-dropdown__content">
-    <div *ngFor="let option of dropdownConfig.options"
-    class="milkyway-dropdown__item">
+    <div *ngFor="let option of dropdownConfig.options" class="milkyway-dropdown__item" (click)="onSelection(option)">
       {{ option }}
     </div>
   </div>

@@ -1,4 +1,4 @@
-# MilkywayProject
+# Milkyway Project [Axelspace Assignment]
 
 ## This project is created by Felipe Moscoso, for the Axelspace technical Assignment :)
 
@@ -40,7 +40,9 @@ The project keep and follow the most used patterns within Angular projects, howe
 ┣ 📂components
 ┣ 📂config
 ┣ 📂core
+┣ 📂models
 ┣ 📂modules
+┣ 📂pipes
 ┣ 📂services
 ┗ 📂unit-tests
 📜.editorconfig
@@ -54,12 +56,14 @@ The project keep and follow the most used patterns within Angular projects, howe
 
 | Folder        | Description  	|
 |---	        |---	|
+| src/assets  	| Main styles, css files, custom theme, color palette, etc.  	|
+| src/components  	| Main components of the application 	|
 | src/config  	| Services routes, application internal routes, environments config, unit test config, lang resources, etc.   	|
 | src/core  	| Main startup of the application, compatibility, mock services config, routes and url mapping.  	|
-| src/modules  	| Redux props and data flow injectors.  	|
+| src/models 	| Models and interfaces.  	|
+| src/modules  	| Angular modules.  	|
+| src/services  	| Pipes, filters and order by.  	|
 | src/services  	| Angular services.  	|
-| src/components  	| Main components of the application 	|
-| src/assets  	| Main styles, css files, custom theme, color palette, etc.  	|
 | src/unit-tests  	| Unit test coverage of the components, redux, etc.  	|
 
 ## Run the app

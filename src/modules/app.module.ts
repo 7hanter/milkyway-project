@@ -6,24 +6,29 @@ import { AppComponent } from '@components/pages/master-page/app.component';
 import { DropdownComponent } from '@components/common/dropdown/dropdown.component';
 import { ListComponent } from '@components/common/list/list.component';
 import { MapComponent } from '@components/common/map/map.component';
-import { SearchBarComponent } from '@components/common/search-bar/search-bar.component';
 import { TripsPageComponent } from '@components/pages/trips-page/trips-page.component';
 
+import { FilterPipe } from  '@pipes/filter.pipe';
+import { OrderByPipe } from  '@pipes/order-by.pipe';
+
+import { DataService } from '@services/data.service';
 import { MapService } from '@services/map.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     DropdownComponent,
+    FilterPipe,
     ListComponent,
     MapComponent,
-    SearchBarComponent,
+    OrderByPipe,
     TripsPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ MapService ],
+  providers: [ DataService, MapService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
